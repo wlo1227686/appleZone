@@ -1,7 +1,9 @@
 自動化構建工具 : Maven
 ==================
 <h2>1.目前掌握的技術</h2>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <br>![](img/img01.png)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <h2>2.目前的技術在開發中存在的問題[Why]</h2>
 I.&nbsp;&nbsp;一個項目就是一個大工程
 
