@@ -2,7 +2,7 @@
 ==================
 
 <h2>1.目前掌握的技術</h2>
-![](img/img01.png)
+<br>![](img/img01.png)
 <h2>2.目前的技術在開發中存在的問題[Why]</h2>
 I.&nbsp;&nbsp;一個項目就是一個大工程
 
@@ -125,7 +125,7 @@ I.&nbsp;&nbsp;注意&nbsp;:&nbsp;執行與構建過程相關的Maven指令，必
     [3]    將 <localRepository>/path/to/local/repo</localRepository> 從註解中取出
     [4]    將內容修改為自定義的目錄
 &nbsp;&nbsp;`<localRepository>[你自定義的目錄路徑]</localRepository>`(如下圖所示) 
-![](img/img08.png)
+<br>![](img/img08.png)
 <h2>9.POM</h2>
 I.&nbsp;&nbsp;含義&nbsp;:&nbsp;
 <br>&nbsp;&nbsp;<font color="#ff0000">Project Object Model</font>&nbsp;[POM]&nbsp;專案物件模型
@@ -159,7 +159,7 @@ I.&nbsp;&nbsp;倉庫的分類&nbsp;:&nbsp;
     [1] 私服 : 搭建在區域網路環境中，為區域網路範圍內所有的Maven專案服務。
     [2] 中央倉庫 : 架設在Internet上，為全世界所有Maven專案服務。
     [3] 中央倉庫的鏡像 : 分擔中央倉庫的流量，減輕主機壓力，提升用戶讀取的速度。
-![](img/img09.png)
+<br>![](img/img09.png)
 II.&nbsp;&nbsp;倉庫保存的內容&nbsp;:&nbsp;Maven專案
 
     [1] Maven本身所需的插件
@@ -178,9 +178,7 @@ I.&nbsp;&nbsp;Maven解析座標時會到本地倉庫中查找被依賴的jar包
 |典型範例  |spring-core.jar|junit.jar|servlet-api.jar|
 
 Tips:&nbsp;provided 與 compile 對於Maven專案的差別
-![](img/img10.png)
-
-
+<br>![](img/img10.png)
 <h2>13.生命週期</h2>
 <br>I.&nbsp;&nbsp;不能打亂構建順序，必須按照正確的順序來執行。
 <br>II.&nbsp;&nbsp;抽象的生命週期中各項任務是由插件所完成。
@@ -239,12 +237,12 @@ Tips:&nbsp;provided 與 compile 對於Maven專案的差別
 <h2>15.依賴[進階]</h2>
 <br>I.&nbsp;&nbsp;依賴的傳遞性:
 
-![](img/img11.png)
+<br>![](img/img11.png)
 <br>&nbsp;[1].好處:可以傳遞的依賴，不必在每個模塊專案中都重複導入，在"底層(基層)"的專案模塊中導入一次即可。
 <br>&nbsp;[2].注意:<font color="#ff0000">scope屬性必須為compile才能傳遞</font>，若有需要就得在各專案模塊中分別導入。
 <br>II.&nbsp;&nbsp;依賴的排除:
 <br>&nbsp;[1]需要設置的情況:
-![](img/img12.png)
+<br>![](img/img12.png)
 <br>&nbsp;[2]依賴排除的設置方式(只限定該專案與依賴該專案的專案)
 
     <exclusions>
@@ -257,9 +255,9 @@ Tips:&nbsp;provided 與 compile 對於Maven專案的差別
 <br>III.&nbsp;&nbsp;依賴的原則:
 <br>`[1] 作用 : 解決模塊專案之間jar包衝突問題`
 <br>`[2] 情況假設1 : 驗證路徑最短優先原則`
-![](img/img13.png)
+<br>![](img/img13.png)
 <br>`[3] 情況假設2 : 驗證路徑相同時，先聲明者優先`<font color="#ff0000">先聲明者定義:在pom.xml的dependency標籤的聲明順序</font>
-![](img/img14.png)
+<br>![](img/img14.png)
 <br>IV.&nbsp;&nbsp;統一管理依賴的版本:
 <br>`[1]情境舉例`:
 <br>&nbsp;&nbsp;假設Spring各個jar包的依賴版本都是4.0.0，此時如果需要統一升級時請問該怎麼處理?
@@ -309,7 +307,7 @@ Tips:&nbsp;provided 與 compile 對於Maven專案的差別
         <relativePath>../Parent/pom.xml</relativePath>
     </parent>
 <br>&nbsp;[3]  將子專案座標中與父專案座標中重複的內容刪除。
-![](img/img15.png)
+<br>![](img/img15.png)
 <br>&nbsp;[4]  在父專案中統一管理junit的依賴。
 
     <!-- 配置依賴的管理 -->
@@ -324,7 +322,7 @@ Tips:&nbsp;provided 與 compile 對於Maven專案的差別
         </dependencies>
     </dependencyManagement>
 <br>&nbsp;[5]  在子專案中刪除junit依賴的版本號部分。
-![](img/img16.png)
+<br>![](img/img16.png)
 <br>`*注意:配置繼承後，執行安裝命令時要先安裝父專案。`
 
 <h2>17.聚合</h2>
