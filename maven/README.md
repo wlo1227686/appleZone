@@ -1,9 +1,30 @@
 自動化構建工具 : Maven
 ==================
-<h2>1.目前掌握的技術</h2>
+*   [目前掌握技術](#ch01)
+*   [目前的技術在開發中存在的問題[Why]](#ch02)
+*   [Maven是什麼[What]](#ch03)
+    *   [構建](#ch03-02)
+    *   [構建過程中的各種環節](#ch03-03)
+*   [安裝Maven核心程序[Who]](#ch04)
+*   [Maven的核心概念](#ch05)
+*   [第一個Maven專案](#ch06)
+*   [常用的Maven指令](#ch07)
+*   [關於聯網問題](#ch08)
+*   [POM](#ch09)
+*   [座標](#ch10)
+*   [倉庫](#ch11)
+*   [依賴[基礎]](#ch12)
+*   [生命週期](#ch13)
+*   [在Eclipse中使用Maven](#ch14)
+*   [依賴[進階]](#ch15)
+*   [繼承](#ch16)
+*   [聚合](#ch17)
+
+* * *
+<h2 id="ch01">1.目前掌握的技術</h2>
 
 <br>![](img/img01.png)<br>
-<h2>2.目前的技術在開發中存在的問題[Why]</h2>
+<h2 id="ch02">2.目前的技術在開發中存在的問題[Why]</h2>
 I.&nbsp;&nbsp;一個項目就是一個大工程
 
     *   如果項目非常龐大，就不適合使用package的方式來劃分模塊。
@@ -27,12 +48,12 @@ IV.&nbsp;&nbsp;一個jar包依賴著其他jar包需要自己手動加入到項�
         Commons-fileupload-1.3.jar 依賴於 Commons-io-2.0.1.jar
             如果所有的jar包之間的依賴關係都需要工程師自己非常清楚的去了解，那麼就會增加極大的學習成本。
     *   Maven會自動將被依賴的jar包導入進來。
-<h2>3.Maven是什麼[What]</h2>
+<h2 id="ch03">3.Maven是什麼[What]</h2>
 I.&nbsp;&nbsp;Maven是一款<font color="#ff00ff">服務於Java平台</font>的自動化<font color="#ff00ff">構建工具</font>。
 <br>&nbsp;&nbsp;構建工具歷史：
 
 		Make -> Ant -> Maven -> Gradle
-II.&nbsp;&nbsp;構建
+II.&nbsp;&nbsp;<font id="ch03-02">構建</font>
 <br>&nbsp;&nbsp;[1]概念:&nbsp;以<font color="#ff0000">Java源文件</font>、<font color="#ff0000">框架配置文件</font>、<font color="#ff0000">JSP</font>、<font color="#ff0000">HTML</font>、<font color="#ff0000">圖片</font>等資源為<font color="#ff0000">"原材料"</font>，去<font color="#ff00ff">生產</font>一個可以運行的項目的過程。
 <br>&nbsp;&nbsp;[2]編譯:&nbsp;Java原文件[User.java]<font color="#ff0000">&nbsp;-->&nbsp;</font>編譯<font color="#ff0000">&nbsp;-->&nbsp;</font>Class字節文字檔[User.class]<font color="#ff0000">&nbsp;-->&nbsp;</font>交由JVM去執行
 <br>&nbsp;&nbsp;[3]部署:一個BS項目最終運行的並不是動態Web工程本身，而是這個動態Web工程"編譯結果"
@@ -45,7 +66,7 @@ II.&nbsp;&nbsp;構建
 <br>Tips: Pivotal tc Server Integeration for Eclipse (Eclipse插件)
 <br>![](img/img04.png)
 
-III.&nbsp;&nbsp;構建過程中的各種環節
+III.&nbsp;&nbsp;<font id="ch03-03">構建過程中的各種環節</font>
 
 	[1]	清理: 將以前編碼得到的class字節碼文件刪掉，為下一次編譯做準備。
 	[2]	編譯: 將Java源程序編譯成class字節碼文件。
@@ -55,7 +76,7 @@ III.&nbsp;&nbsp;構建過程中的各種環節
 	[6]	安裝: (Maven特定的概念)將打包得到的文件複製到倉庫中指定位置
 	[7]	部署: 將動態Web工程生成的war包複製到Servlet容器的指定目錄下，使其可以運行。
 IV.&nbsp;&nbsp;自動化構建
-<h2>4.安裝Maven核心程序[Who]</h2>
+<h2 id="ch04">4.安裝Maven核心程序[Who]</h2>
 I.&nbsp;&nbsp;檢查環境變數(JAVA_HOME)
 
 <br>![](img/img05.png)
@@ -64,7 +85,7 @@ I.&nbsp;&nbsp;檢查環境變數(JAVA_HOME)
 <br>![](img/img06.png)<br>
 <br>IV.&nbsp;&nbsp;驗證&nbsp;mvn&nbsp;-v&nbsp;命令查看Maven版本。
 <br>![](img/img07.png)<br>
-<h2>5.Maven的核心概念</h2>
+<h2 id="ch05">5.Maven的核心概念</h2>
 
     [1]    約定的目錄結構
     [2]    POM
@@ -74,7 +95,7 @@ I.&nbsp;&nbsp;檢查環境變數(JAVA_HOME)
     [6]    生命週期/插件/目標
     [7]    繼承
     [8]    聚合
-<h2>6.第一個Maven專案</h2>
+<h2 id="ch06">6.第一個Maven專案</h2>
 I.&nbsp;&nbsp;創建一個約定的目錄結構
 <br>[1]Hello
 <br>&nbsp;|---[2]src
@@ -100,7 +121,7 @@ II.&nbsp;&nbsp;為什麼要遵守約定的目錄結構?
     [1]    以配置文件的方式明確告知 例如: classpath:spring-context.xml
     [2]    遵守框架或工具內部已存在的約定 例如: Log4j
     *開發上的優先順序    約定 > 配置 > 編碼
-<h2>7.常用的Maven指令</h2>
+<h2 id="ch07">7.常用的Maven指令</h2>
 I.&nbsp;&nbsp;注意&nbsp;:&nbsp;執行與構建過程相關的Maven指令，必須進入pom.xml同級層的目錄夾。
 <br>&nbsp;&nbsp;與建構過程相關&nbsp;:&nbsp;編譯、測試、打包、...
 <br>II.&nbsp;&nbsp;常用指令
@@ -113,7 +134,7 @@ I.&nbsp;&nbsp;注意&nbsp;:&nbsp;執行與構建過程相關的Maven指令，必
     [6]    mvn install : 安裝
     [7]    mvn site : 生成站點
 
-<h2>8.關於聯網問題</h2>
+<h2 id="ch08">8.關於聯網問題</h2>
 <br>I.&nbsp;&nbsp;Maven的核心程序中僅僅定義了抽象的生命週期，但是具體的工作必須由特定的插件來完成。而插件本身並不包含在Maven的核心程序中。
 <br>II.&nbsp;&nbsp;當我們執行Maven指令需要用到某些插件時，Maven核心程序會首先到本地倉庫中查找。
 <br>III.&nbsp;&nbsp;本地倉庫的默認位置:&nbsp;<font color="#ff0000">[當前使用者的家目錄]</font>&nbsp;/.m2/repository
@@ -127,12 +148,12 @@ I.&nbsp;&nbsp;注意&nbsp;:&nbsp;執行與構建過程相關的Maven指令，必
     [4]    將內容修改為自定義的目錄
 &nbsp;&nbsp;`<localRepository>[你自定義的目錄路徑]</localRepository>`(如下圖所示) 
 <br>![](img/img08.png)<br>
-<h2>9.POM</h2>
+<h2 id="ch09">9.POM</h2>
 I.&nbsp;&nbsp;含義&nbsp;:&nbsp;
 <br>&nbsp;&nbsp;<font color="#ff0000">Project Object Model</font>&nbsp;[POM]&nbsp;專案物件模型
 <br>&nbsp;&nbsp;<font color="#ff0000">Document Object Model</font>&nbsp;[DOM]&nbsp;文件物件模型
 <br>II.&nbsp;&nbsp;pom.xml對於Maven專案是核心配置文件，該文件配置一切與構建過程相關的參數。
-<h2>10.座標</h2>
+<h2 id="ch10">10.座標</h2>
 I.&nbsp;&nbsp;數學中的座標&nbsp;:&nbsp;
 
     [1]在2D平面中，使用X,Y兩個向量，可以定位平面中的任何一個唯一點。
@@ -151,7 +172,7 @@ III.&nbsp;&nbsp;Maven專案的座標與倉庫中路徑的對應關係
     <version>4.3.9.RELEASE</version>
 &nbsp;&nbsp;倉庫路徑&nbsp;:&nbsp;
 <br>`org/springframework/spring-core/4.3.9.RELEASE/spring-core-4.3.9.RELEASE.jar`
-<h2>11.倉庫</h2>
+<h2 id="ch11">11.倉庫</h2>
 I.&nbsp;&nbsp;倉庫的分類&nbsp;:&nbsp;
 <br>&nbsp;[1]本地倉庫&nbsp;:&nbsp;當前電腦上部署的倉庫目錄，為當前電腦上所有Maven專案服務。
 <br>
@@ -166,7 +187,7 @@ II.&nbsp;&nbsp;倉庫保存的內容&nbsp;:&nbsp;Maven專案
     [1] Maven本身所需的插件
     [2] 第三方框架或工具的jar包 (第一方 : jdk 第二方 : 自己)
     [3] 自己開發的Maven專案
-<h2>12.依賴[基礎]</h2>
+<h2 id="ch12">12.依賴[基礎]</h2>
 I.&nbsp;&nbsp;Maven解析座標時會到本地倉庫中查找被依賴的jar包
 <br>II.&nbsp;&nbsp;依賴的範圍: `<scope> </scope>`
 
@@ -180,7 +201,7 @@ I.&nbsp;&nbsp;Maven解析座標時會到本地倉庫中查找被依賴的jar包
 
 Tips:&nbsp;provided 與 compile 對於Maven專案的差別
 <br>![](img/img10.png)
-<h2>13.生命週期</h2>
+<h2 id="ch13">13.生命週期</h2>
 <br>I.&nbsp;&nbsp;不能打亂構建順序，必須按照正確的順序來執行。
 <br>II.&nbsp;&nbsp;抽象的生命週期中各項任務是由插件所完成。
 <br>III.&nbsp;&nbsp;執行各個環節的構建是從最初的位置開始。
@@ -228,14 +249,14 @@ Tips:&nbsp;provided 與 compile 對於Maven專案的差別
     [3]相似的目標由特定的插件來完成。
     [4]可以將目標看作"調用插件功能的命令"
 
-<h2>14.在Eclipse中使用Maven</h2>
+<h2 id="ch14">14.在Eclipse中使用Maven</h2>
 <br>I.&nbsp;&nbsp;Maven插件:&nbsp;Eciplse內建
 <br>II.&nbsp;&nbsp;Maven插件的設置:
 
     [1] installations:指定Maven核心程序位置。不建議使用Eclipse自帶的Maven程序，因使用自行解壓縮的那包。
     [2] User Setting:指定 conf/settings.xml 的位置，進而設定本地倉庫的位置。
 
-<h2>15.依賴[進階]</h2>
+<h2 id="ch15">15.依賴[進階]</h2>
 <br>I.&nbsp;&nbsp;依賴的傳遞性:
 
 <br>![](img/img11.png)
@@ -281,7 +302,7 @@ Tips:&nbsp;provided 與 compile 對於Maven專案的差別
         <chenfu.spring.version>4.3.9.RELEASE</chenfu.spring.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-<h2>16.繼承</h2>
+<h2 id="ch16">16.繼承</h2>
 
     I.  現況
         Hello       依賴junit: 4.0
@@ -326,7 +347,7 @@ Tips:&nbsp;provided 與 compile 對於Maven專案的差別
 <br>![](img/img16.png)
 <br>`*注意:配置繼承後，執行安裝命令時要先安裝父專案。`
 
-<h2>17.聚合</h2>
+<h2 id="ch17">17.聚合</h2>
 <br>`I.  作用:`一鍵安裝各個模塊專案。
 <br>`II.  配置方式:`在一個`總的聚合專案`中配置各個參與聚合的模塊。
 
