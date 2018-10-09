@@ -1,9 +1,8 @@
 自動化構建工具 : Maven
 ==================
 <h2>1.目前掌握的技術</h2>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 <br>![](img/img01.png)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <h2>2.目前的技術在開發中存在的問題[Why]</h2>
 I.&nbsp;&nbsp;一個項目就是一個大工程
 
@@ -58,7 +57,8 @@ III.&nbsp;&nbsp;構建過程中的各種環節
 IV.&nbsp;&nbsp;自動化構建
 <h2>4.安裝Maven核心程序[Who]</h2>
 I.&nbsp;&nbsp;檢查環境變數(JAVA_HOME)
-<br>![](img/img05.png)<br>
+
+<br>![](img/img05.png)
 <br>II.&nbsp;&nbsp;解壓Maven核心程序的壓縮包，放在一個非中文無空格之路徑下。
 <br>III.&nbsp;&nbsp;配置Maven相關的環境變量。
 <br>![](img/img06.png)<br>
