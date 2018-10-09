@@ -1,8 +1,7 @@
 自動化構建工具 : Maven
 ==================
-
 <h2>1.目前掌握的技術</h2>
-<br>![](img/img01.png)
+<br>![](img/img01.png)<br>
 <h2>2.目前的技術在開發中存在的問題[Why]</h2>
 I.&nbsp;&nbsp;一個項目就是一個大工程
 
@@ -57,12 +56,12 @@ III.&nbsp;&nbsp;構建過程中的各種環節
 IV.&nbsp;&nbsp;自動化構建
 <h2>4.安裝Maven核心程序[Who]</h2>
 I.&nbsp;&nbsp;檢查環境變數(JAVA_HOME)
-<br>![](img/img05.png)
+<br>![](img/img05.png)<br>
 <br>II.&nbsp;&nbsp;解壓Maven核心程序的壓縮包，放在一個非中文無空格之路徑下。
 <br>III.&nbsp;&nbsp;配置Maven相關的環境變量。
-<br>![](img/img06.png)
+<br>![](img/img06.png)<br>
 <br>IV.&nbsp;&nbsp;驗證&nbsp;mvn&nbsp;-v&nbsp;命令查看Maven版本。
-<br>![](img/img07.png)
+<br>![](img/img07.png)<br>
 <h2>5.Maven的核心概念</h2>
 
     [1]    約定的目錄結構
@@ -125,7 +124,7 @@ I.&nbsp;&nbsp;注意&nbsp;:&nbsp;執行與構建過程相關的Maven指令，必
     [3]    將 <localRepository>/path/to/local/repo</localRepository> 從註解中取出
     [4]    將內容修改為自定義的目錄
 &nbsp;&nbsp;`<localRepository>[你自定義的目錄路徑]</localRepository>`(如下圖所示) 
-<br>![](img/img08.png)
+<br>![](img/img08.png)<br>
 <h2>9.POM</h2>
 I.&nbsp;&nbsp;含義&nbsp;:&nbsp;
 <br>&nbsp;&nbsp;<font color="#ff0000">Project Object Model</font>&nbsp;[POM]&nbsp;專案物件模型
@@ -159,7 +158,7 @@ I.&nbsp;&nbsp;倉庫的分類&nbsp;:&nbsp;
     [1] 私服 : 搭建在區域網路環境中，為區域網路範圍內所有的Maven專案服務。
     [2] 中央倉庫 : 架設在Internet上，為全世界所有Maven專案服務。
     [3] 中央倉庫的鏡像 : 分擔中央倉庫的流量，減輕主機壓力，提升用戶讀取的速度。
-<br>![](img/img09.png)
+<br>![](img/img09.png)<br>
 II.&nbsp;&nbsp;倉庫保存的內容&nbsp;:&nbsp;Maven專案
 
     [1] Maven本身所需的插件
