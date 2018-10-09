@@ -53,7 +53,7 @@ I.&nbsp;&nbsp;Maven是一款<font color="#ff00ff">服務於Java平台</font>的�
 <br>&nbsp;&nbsp;構建工具歷史：
 
 		Make -> Ant -> Maven -> Gradle
-II.&nbsp;&nbsp;<font id="ch03-02">構建</font>
+II.&nbsp;&nbsp;<p id="ch03-02">構建</p>
 <br>&nbsp;&nbsp;[1]概念:&nbsp;以<font color="#ff0000">Java源文件</font>、<font color="#ff0000">框架配置文件</font>、<font color="#ff0000">JSP</font>、<font color="#ff0000">HTML</font>、<font color="#ff0000">圖片</font>等資源為<font color="#ff0000">"原材料"</font>，去<font color="#ff00ff">生產</font>一個可以運行的項目的過程。
 <br>&nbsp;&nbsp;[2]編譯:&nbsp;Java原文件[User.java]<font color="#ff0000">&nbsp;-->&nbsp;</font>編譯<font color="#ff0000">&nbsp;-->&nbsp;</font>Class字節文字檔[User.class]<font color="#ff0000">&nbsp;-->&nbsp;</font>交由JVM去執行
 <br>&nbsp;&nbsp;[3]部署:一個BS項目最終運行的並不是動態Web工程本身，而是這個動態Web工程"編譯結果"
@@ -65,8 +65,7 @@ II.&nbsp;&nbsp;<font id="ch03-02">構建</font>
 <br><sub>其實是一組jar包的引用，並沒有把jar包本身複製到工程中</sub>
 <br>Tips: Pivotal tc Server Integeration for Eclipse (Eclipse插件)
 <br>![](img/img04.png)
-
-III.&nbsp;&nbsp;<font id="ch03-03">構建過程中的各種環節</font>
+III.&nbsp;&nbsp;<p id="ch03-03">構建過程中的各種環節</p>
 
 	[1]	清理: 將以前編碼得到的class字節碼文件刪掉，為下一次編譯做準備。
 	[2]	編譯: 將Java源程序編譯成class字節碼文件。
