@@ -59,6 +59,7 @@ II.&nbsp;&nbsp;構建
 <br>&nbsp;&nbsp;[2]編譯:&nbsp;Java原文件[User.java]<font color="#ff0000">&nbsp;-->&nbsp;</font>編譯<font color="#ff0000">&nbsp;-->&nbsp;</font>Class字節文字檔[User.class]<font color="#ff0000">&nbsp;-->&nbsp;</font>交由JVM去執行
 <br>&nbsp;&nbsp;[3]部署:一個BS項目最終運行的並不是動態Web工程本身，而是這個動態Web工程"編譯結果"
 <br>&nbsp;&nbsp;動態Web工程 ->&nbsp;編譯，部署&nbsp;->&nbsp;編譯結果
+
 <br>![](img/img02.png)
 <br>開發過程中，所有的路徑或配置文件中配置的類路徑等都是以編譯結果的目錄結構為標準。
 <br>Tips:運行時環境
