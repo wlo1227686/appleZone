@@ -257,6 +257,20 @@ Tips:&nbsp;provided 與 compile 對於Maven專案的差別
 
     [1] installations:指定Maven核心程序位置。不建議使用Eclipse自帶的Maven程序，因使用自行解壓縮的那包。
     [2] User Setting:指定 conf/settings.xml 的位置，進而設定本地倉庫的位置。
+`Maven 預設 JDK 1.8 `
+
+    <profile>
+      <id>jdk-1.8</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+        <jdk>1.8</jdk>
+      </activation>
+        <properties>
+          <maven.compiler.source>1.8</maven.compiler.source>
+          <maven.compiler.target>1.8</maven.compiler.target>
+          <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+      </properties>
+    </profile> 
 
 <h2 id="ch15">15.依賴[進階]</h2>
 <br>I.&nbsp;&nbsp;依賴的傳遞性:
